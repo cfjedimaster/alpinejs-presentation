@@ -63,10 +63,120 @@
 					<li class="fragment">2 methods</li>
 					<li class="fragment">36kb minified, 13kb min+gz</li>
 				</ul></li>
+				<li class="fragment">Dynamically render data in HTML</li>
+				<li class="fragment">Bind data and form fields</li>
+				<li class="fragment">Easily handle events</li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>Alpine.js - TLDR</h2>
+				<ul>
 				<li class="fragment">Vue "like"! 😀 &amp; 🚩</li>
 				<li class="fragment">Great for progressive enhancement</li>
 				<li class="fragment">Not for "apps"</li>
+				<li class="fragment">🧂</li>
+				</ul>
 				</section>
+
+				<section data-background="img/flyingcats.jpg" data-background-opacity="0.2">
+				<h2 class="r-fit-text">Let's Go!</h2>
+				</section>
+
+				<section>
+				<h2>Step One</h2>
+				<pre><code class="html" data-trim>
+&lt;script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>Step Two</h2>
+				<p>
+				Figure out "your area of concern"
+				</p>
+				</section>
+
+				<section>
+				<img src="img/dom1.png">
+				</section>
+				<section>
+				<img src="img/dom2.png">
+				</section>
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="|6">
+<!-- 
+More HTML up here, site layout, annoying subscribe modals
+-->
+
+<!-- Let's do cool stuff here! -->
+<div x-data="">
+    <!-- more stuff here... -->
+</div>
+
+<!--
+More HTML including awesome cookie consent banners
+-->
+&lt;script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>x-data</h2>
+				<ul>
+				<li class="fragment">Let's you define variables</li>
+				<li class="fragment">Let's you implement event handlers</li>
+				<li class="fragment">Let's you listen for Alpine initialization</li>
+				<li class="fragment">Let's you define ad hoc methods</li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+
+<!-- Let's do cool stuff here! -->
+<div x-data="{
+	name:'Raymond',
+	age:49
+}">
+    <!-- more stuff here... -->
+</div>
+				</code></pre>
+				</section>
+
+				<section>
+				<h2>Render Data (1)</h2>
+				<ul>
+				<li class="fragment">x-text</li>
+				<li class="fragment">x-html</li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+
+<!-- Let's do cool stuff here! -->
+<div x-data="{
+	name:'Raymond',
+	age:49
+}">
+
+	My name is <span x-text="name"></span> and 
+	I'm <span x-text="age"></span> years old.
+</div>
+				</code></pre>
+				</section>
+
+				<section>
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="vYRKboG" data-editable="true" data-user="cfjedimaster" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/vYRKboG">
+  Alpine Preso 1</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
 
 				<section>
 					<h2>Questions?</h2>
