@@ -72,6 +72,15 @@
 				<section>
 				<h2>Alpine.js - TLDR</h2>
 				<ul>
+				<li class="fragment"><a href="https://alpinejs.dev" target="_new">https://alpinejs.dev</a></li>
+				<li class="fragment">Version 3.10.2</li>
+				<li class="fragment">Created by <a href="https://twitter.com/calebporzio" target="_new">Caleb Porzio</a></li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>Alpine.js - TLDR</h2>
+				<ul>
 				<li class="fragment">Vue "like"! 😀 &amp; 🚩</li>
 				<li class="fragment">Great for progressive enhancement</li>
 				<li class="fragment">Not for "apps"</li>
@@ -123,6 +132,11 @@ More HTML including awesome cookie consent banners
 				</section>
 
 				<section>
+				<h2>Step Three</h2>
+				<img src="img/cattyping.gif">
+				</section>
+
+				<section>
 				<h2>x-data</h2>
 				<ul>
 				<li class="fragment">Let's you define variables</li>
@@ -146,7 +160,7 @@ More HTML including awesome cookie consent banners
 				</section>
 
 				<section>
-				<h2>Render Data (1)</h2>
+				<h2>Render Data</h2>
 				<ul>
 				<li class="fragment">x-text</li>
 				<li class="fragment">x-html</li>
@@ -169,7 +183,9 @@ More HTML including awesome cookie consent banners
 				</section>
 
 				<section>
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="vYRKboG" data-editable="true" data-user="cfjedimaster" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="500" data-theme-id="dark" 
+data-default-tab="html,result" data-slug-hash="vYRKboG" 
+data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/vYRKboG">
   Alpine Preso 1</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -177,7 +193,176 @@ More HTML including awesome cookie consent banners
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 				</section>
 
+				<section>
+				<h2>Conditionals</h2>
+				<ul>
+				<li class="fragment">x-show (hides/unhides from DOM)</li>
+				<li class="fragment">x-if (adds/removes from DOM)</li>
+				<li class="fragment"><strong>x-if must use &lt;template&gt; and have a root element.</strong></li>
+				</ul>
+				</section>
 
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+
+<!-- Let's do cool stuff here! -->
+<div x-data="{
+	name:'Raymond',
+	age:49
+}">
+
+	My name is <span x-text="name"></span>.<br/>
+
+	<div x-show="name == 'Raymond'">
+		Hi Ray!
+	</div>
+
+	<template x-if="age > 40">
+	<p>
+	I bet you saw Star Wars in the theater!
+	</p>
+	</template>
+</div>
+				</code></pre>
+				</section>
+
+				<section>
+				<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" 
+				data-slug-hash="YzaGpNM" data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+				<span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/YzaGpNM">
+				Alpine Preso 2</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+				on <a href="https://codepen.io">CodePen</a>.</span>
+				</p>
+				<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section>
+				<h2>Looping</h2>
+				<ul>
+				<li class="fragment">x-for</li>
+				<li class="fragment">Can get an index too</li>
+				<li class="fragment"><strong>Must use &lt;template&gt; with ONE root element</strong></li>
+				<li class="fragment">:key if you will be re-ordering (attribute binding!)</li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+<div x-data="{
+	cats:['Luna', 'Elise', 'Pig']
+}">
+
+	<template x-for="cat in cats">
+	<p>
+	This cat is named <span x-text="cat"></span>
+	</p>
+	</template>
+</div>
+				</code></pre>
+				</section>
+
+				<section>
+				<p class="codepen" data-height="500" data-theme-id="dark" 
+				data-default-tab="html,result" data-slug-hash="ExEgNLe" data-editable="true" 
+				data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+				<span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/ExEgNLe">
+				Alpine Preso 2</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+				on <a href="https://codepen.io">CodePen</a>.</span>
+				</p>
+				<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section>
+<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="ExEgNRd" 
+data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/ExEgNRd">
+  Alpine Preso 4</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+
+				<section>
+				<h2>Binding</h2>
+				<ul>
+				<li class="fragment">x-model</li>
+				<li class="fragment">Works on all form fields<sup>*</sup></li>
+				<li class="fragment">Supports modifiers (for ex, <code>.number</code>)</li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+<div x-data="{
+    name:'Ray'
+}">
+
+	<p>
+		Your name is <span x-text="name"></span>
+		Your new name is <input x-model="name">
+	</p>
+</div>
+				</code></pre>
+				</section>
+
+				<section>
+				<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" 
+				data-slug-hash="MWVjZPy" data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/MWVjZPy">
+  Alpine Preso 5</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section>
+				<h2>Getters</h2>
+				<ul>
+				<li class="fragment">Use a function that makes use of this scoped variables</li>
+				<li class="fragment">Alpine will recognize when changed</li>
+				<li class="fragment">JavaScript <code>get</code> modifier is not required.</li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+<div x-data="{
+	firstName:'Ray',
+	lastName:'Camden',
+	get fullName() {
+		return this.firstName + ' ' + this.lastName
+	}
+}">
+
+	<p x-text="fullName"></p>
+	<p>
+		First Name: <input x-model="firstName"><br/>
+		Last Name: <input x-model="lastName"><br/>
+	</p>
+</div>
+				</code></pre>
+				</section>
+
+				<section>
+				<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" 
+				data-slug-hash="vYRXbgP" data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/vYRXbgP">
+  Alpine Preso 6</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+<!--
+Todo:
+events
+life cycle
+demo
+resources
+https://alpinejs.dev/components
+-->
 				<section>
 					<h2>Questions?</h2>
 					<img src="img/cat_qa.png">
