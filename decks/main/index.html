@@ -73,6 +73,7 @@
 				<h2>Alpine.js - TLDR</h2>
 				<ul>
 				<li class="fragment"><a href="https://alpinejs.dev" target="_new">https://alpinejs.dev</a></li>
+				<li class="fragment">Initial release: November 2019</li>
 				<li class="fragment">Version 3.10.2</li>
 				<li class="fragment">Created by <a href="https://twitter.com/calebporzio" target="_new">Caleb Porzio</a></li>
 				</ul>
@@ -148,8 +149,6 @@ More HTML including awesome cookie consent banners
 
 				<section>
 				<pre><code class="html" data-trim data-line-numbers="">
-
-<!-- Let's do cool stuff here! -->
 <div x-data="{
 	name:'Raymond',
 	age:49
@@ -169,8 +168,6 @@ More HTML including awesome cookie consent banners
 
 				<section>
 				<pre><code class="html" data-trim data-line-numbers="">
-
-<!-- Let's do cool stuff here! -->
 <div x-data="{
 	name:'Raymond',
 	age:49
@@ -205,8 +202,6 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 
 				<section>
 				<pre><code class="html" data-trim data-line-numbers="">
-
-<!-- Let's do cool stuff here! -->
 <div x-data="{
 	name:'Raymond',
 	age:49
@@ -355,9 +350,82 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 				</section>
 
+				<section>
+				<h2>Events</h2>
+				<ul>
+				<li class="fragment"><code>x-on</code></li>
+				<li class="fragment"><code>&lt;button x-on:click="someFunc"&gt;</code></li>
+				<li class="fragment"><code>&lt;button @click="someFunc"&gt;</code></li>
+				<li class="fragment">Modifiers: Specific keys, prevent default, etc</li>
+				<li class="fragment"><code>&lt;button @click.prevent="someFunc"&gt;</code></li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+<div x-data="{
+	name:'',
+	upperCase() {
+		this.name = this.name.toUpperCase();;
+	}
+}">
+
+	<input placeholder="Enter your name" x-model="name">
+	<button @click.prevent="upperCase">Upper Case</button>
+</div>
+				</code></pre>
+				</section>
+
+				<section>
+				<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" 
+				data-slug-hash="mdxOmwg" data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/mdxOmwg">
+  Alpine Preso 7</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section>
+					<h2 class="fragment">This is cool...</h2>
+					<h2 class="fragment">JavaScript in HTML???</h2>
+					<div class="fragment">
+					<img src="img/nose.jpg">
+					<p>Photo credit: <a href="https://www.flickr.com/photos/aquamech-utah/24445365953">Aqua Mechanical</a></p>
+					</div>
+				</section>
+
+				<section>
+				<h2>Moving JavaScript to JavaScript!</h2>
+				<ul>
+				<li class="fragment">Listen for <code>alpine:init</code> event...</li>
+				<li class="fragment">Alpine.data(' name of app... ')</li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+<div x-data="myApp">
+
+	<input placeholder="Enter your name" x-model="name">
+	<button @click.prevent="upperCase">Upper Case</button>
+
+</div>
+				</code></pre>
+				</section>
+
+				<section>
+				<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" 
+				data-slug-hash="xxWRdzJ" data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/xxWRdzJ">
+  Alpine Preso 8</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
 <!--
 Todo:
-events
 life cycle
 demo
 resources
