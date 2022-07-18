@@ -424,11 +424,74 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 				</section>
 
+				<section>
+				<h2>Lifecycle</h2>
+				<ul>
+				<li class="fragment"><code>init</code> or <code>x-init</code></li>
+				<li class="fragment"><code>$watch</code> or <code>x-effect</code>
+				<ul>
+					<li class="fragment"><code>$watch('someData', (value, oldValue) => { .... })</code></li>
+					<li class="fragment"><code>x-effect="domSomething(someData)"</code></li>
+				</ul>
+				</li>
+				<li class="fragment"><code>alpine:init</code></li>
+				<li class="fragment"><code>alpine:initialized</code></li>
+				</ul>
+				<aside class="notes">
+				init - when Alpine 'beginsd' initializing 
+				alpine:init - after Alpine is loaded, before it starts working on the page
+				</aside>
+				</section>
+
+
+				<section>
+				<pre><code class="javascript" data-trim data-line-numbers="">
+document.addEventListener('alpine:init', () => {
+	Alpine.data('myApp', () => ({
+		async init() {
+			let resp = await fetch('some cat api url');
+			let data = await resp.json();
+			this.cats = data.cats;
+		},
+		cats:[]
+	}))
+})
+				</code></pre>
+				</section>
+
+				<section>
+<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="RwMpNaG" 
+data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/RwMpNaG">
+  Alpine Preso 9</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section>
+				<h2>Resources</h2>
+				<ul>
+				<li class="fragment">Main site: <a href="https://alpinejs.dev/" target="_new">https://alpinejs.dev/</a></li>
+				<li class="fragment">Discord: <a href="https://alpinejs.codewithhugo.com/chat/" target="_new">https://alpinejs.codewithhugo.com/chat/</a></li>
+				<li class="fragment">Twitter: <a href="https://twitter.com/Alpine_JS" target="_new">@Alpine_JS</a></li>
+				<li class="fragment"><a href="https://codepen.io/collection/LPLbjy" target="_new">Preso CodePen samples</a></li>
+				</ul>
+				</section>
+
+				<section>
+				<h2>Stuff I didn't cover... </h2>
+				<ul>
+				<li class="fragment"><code>x-transition</code> - <a href="https://alpinejs.dev/directives/transition" target="_new">Docs</a></li>
+				<li class="fragment">Plugins</li>
+				<li class="fragment">Extending</li>
+				<li class="fragment"><a href="https://alpinejs.dev/start-here" target="_new">Docs</a></li>
+				</ul>
+				</section>
+
 <!--
 Todo:
-life cycle
-demo
-resources
+demo - maybe
 https://alpinejs.dev/components
 -->
 				<section>
@@ -461,5 +524,4 @@ https://alpinejs.dev/components
 
 <!--
 Photo by <a href="https://unsplash.com/@valdemaras?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Valdemaras Januška</a> on <a href="https://unsplash.com/s/photos/alpine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-  -->
+-->
