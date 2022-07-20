@@ -233,12 +233,42 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 				</section>
 
 				<section>
+				<h2>Attribute Binding</h2>
+				<ul>
+				<li class="fragment">x-bind</li>
+				<li class="fragment">x-bind:something="someval"</li>
+				<li class="fragment">:something="someval"</li>
+				</ul>
+				</section>
+
+				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+<div x-data="{
+    catImage: 'https://placekitten.com/500/500'
+}">
+
+	<img :src="catImage">
+</div>
+				</code></pre>
+				</section>
+
+				<section>
+<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" 
+data-slug-hash="wvmdzBg" data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/wvmdzBg">
+  Alpine Preso Attr</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>				
+				</section>
+
+				<section>
 				<h2>Looping</h2>
 				<ul>
 				<li class="fragment">x-for</li>
 				<li class="fragment">Can get an index too</li>
 				<li class="fragment"><strong>Must use &lt;template&gt; with ONE root element</strong></li>
-				<li class="fragment">:key if you will be re-ordering (attribute binding!)</li>
+				<li class="fragment">:key if you will be re-ordering (attribute binding)</li>
 				</ul>
 				</section>
 
@@ -280,7 +310,7 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 
 
 				<section>
-				<h2>Binding</h2>
+				<h2>Form Binding</h2>
 				<ul>
 				<li class="fragment">x-model</li>
 				<li class="fragment">Works on all form fields<sup>*</sup></li>
