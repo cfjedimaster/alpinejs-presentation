@@ -29,16 +29,16 @@
 				<section>
 				<div class="twocol">
 				<div>
-				<h2>Me</h2>
-				<ul>
-				<li>Raymond Camden</li>
-				<li>Senior Developer Evangelist for Adobe, Document Services</li>
-				<li>raymondcamden.com</li>
-				<li>@raymondcamden (DMs are open!)</li>
-				</ul>
+					<h2>Me</h2>
+					<ul style="width: 100% !important">
+					<li>Raymond Camden</li>
+					<li>Senior Developer Evangelist for Adobe, Acrobat Services</li>
+					<li>raymondcamden.com</li>
+					<li style="word-break:break-all">@raymondcamden@raymondcamden.com (Mastodon)</li>
+					</ul>
 				</div>
 				<div>
-				<img src="img/ray.jpg" style="max-width:70%">
+					<img src="img/ray.jpg" style="max-width:70%">
 				</div>
 				</div>
 				</section>
@@ -74,7 +74,7 @@
 				<ul>
 				<li class="fragment"><a href="https://alpinejs.dev" target="_new">https://alpinejs.dev</a></li>
 				<li class="fragment">Initial release: November 2019</li>
-				<li class="fragment">Version 3.10.2</li>
+				<li class="fragment">Version 3.10.5</li>
 				<li class="fragment">Created by <a href="https://twitter.com/calebporzio" target="_new">Caleb Porzio</a></li>
 				</ul>
 				</section>
@@ -89,6 +89,10 @@
 				</ul>
 				</section>
 
+				<section>
+				<a href="https://mastodon.social/@davatron5000/109660344191404412"><img src="img/dave.png"></a>
+				</section>
+
 				<section data-background="img/flyingcats.jpg" data-background-opacity="0.2">
 				<h2 class="r-fit-text">Let's Go!</h2>
 				</section>
@@ -96,7 +100,8 @@
 				<section>
 				<h2>Step One</h2>
 				<pre><code class="html" data-trim>
-&lt;script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;
+&lt;script defer 
+src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;
 				</code></pre>
 				</section>
 
@@ -144,6 +149,7 @@ More HTML including awesome cookie consent banners
 				<li class="fragment">Let's you implement event handlers</li>
 				<li class="fragment">Let's you listen for Alpine initialization</li>
 				<li class="fragment">Let's you define ad hoc methods</li>
+				<li class="fragment">You *can* do everything here</li>
 				</ul>
 				</section>
 
@@ -288,6 +294,22 @@ data-slug-hash="wvmdzBg" data-editable="true" data-user="cfjedimaster" style="he
 				</section>
 
 				<section>
+				<pre><code class="html" data-trim data-line-numbers="">
+<div x-data="{
+	cats:['Luna', 'Elise', 'Pig']
+}">
+
+	<template x-for="(cat, idx) in cats">
+	<p>
+	This cat (<span x-text="idx"></span>) is 
+	named <span x-text="cat"></span>
+	</p>
+	</template>
+</div>
+				</code></pre>
+				</section>
+
+				<section>
 				<p class="codepen" data-height="500" data-theme-id="dark" 
 				data-default-tab="html,result" data-slug-hash="ExEgNLe" data-editable="true" 
 				data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
@@ -336,6 +358,16 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 				<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" 
 				data-slug-hash="MWVjZPy" data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/MWVjZPy">
+  Alpine Preso 5</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section>
+				<p class="codepen" data-height="500" data-theme-id="dark" data-slug-hash="ExpWVzB" data-default-tab="html,result"
+				data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/ExpWVzB">
   Alpine Preso 5</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
@@ -500,12 +532,47 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 				</section>
 
 				<section>
+				<h2>Magics</h2>
+				<h3>(their term, not mine, but I 💖 it)</h3>
+				<ul>
+				<li class="fragment">$el -> Current DOM element</li>
+				<li class="fragment">$refs -> Associates with x-ref DOM element</li>
+				<li class="fragment">$dispath -> Shortcut for event dispatching</li>
+				<li class="fragment">$nextTick -> Runs after Alpine does reactive stuff</li>
+				<li class="fragment">$root -> Pointer to top level DOM of app</li>
+				<li class="fragment">$data -> Top level of Alpine data</li>
+				<li class="fragment">$id -> Generate unique IDs</li>
+				</ul>
+				</section>
+
+				<section>
+<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" 
+data-slug-hash="RwBprrp" data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/RwBprrp">
+  Alpine Preso 3</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section>
+<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="LYQBGEz" 
+data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/cfjedimaster/pen/LYQBGEz">
+  Image Preview in Alpine.js</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>				
+				</section>
+
+				<section>
 				<h2>Resources</h2>
 				<ul>
 				<li class="fragment">Main site: <a href="https://alpinejs.dev/" target="_new">https://alpinejs.dev/</a></li>
 				<li class="fragment">Discord: <a href="https://alpinejs.codewithhugo.com/chat/" target="_new">https://alpinejs.codewithhugo.com/chat/</a></li>
 				<li class="fragment">Twitter: <a href="https://twitter.com/Alpine_JS" target="_new">@Alpine_JS</a></li>
 				<li class="fragment"><a href="https://codepen.io/collection/LPLbjy" target="_new">Preso CodePen samples</a></li>
+				<li class="fragment">My posts: <a href="https://www.raymondcamden.com/tags/alpinejs" target="_new">raymondcamden.com/tags/alpinejs</a></li>
 				</ul>
 				</section>
 
