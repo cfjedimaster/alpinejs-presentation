@@ -43,6 +43,7 @@
 				</div>
 				</section>
 
+				<!--
 				<section>
 				<h2>Thank You!</h2>
 				<div class="twocol">
@@ -52,6 +53,7 @@
 					<img src="img/luis.png">
 				</div>
 				</section>
+				-->
 
 				<section>
 				<h2>Alpine.js - TLDR</h2>
@@ -74,7 +76,7 @@
 				<ul>
 				<li class="fragment"><a href="https://alpinejs.dev" target="_new">https://alpinejs.dev</a></li>
 				<li class="fragment">Initial release: November 2019</li>
-				<li class="fragment">Version 3.10.5</li>
+				<li class="fragment">Version 3.13.7</li>
 				<li class="fragment">Created by <a href="https://twitter.com/calebporzio" target="_new">Caleb Porzio</a></li>
 				</ul>
 				</section>
@@ -201,7 +203,7 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 				<ul>
 				<li class="fragment">x-show (hides/unhides from DOM)</li>
 				<li class="fragment">x-if (adds/removes from DOM)</li>
-				<li class="fragment"><strong>x-if must use &lt;template&gt; and have a root element.</strong></li>
+				<li class="fragment"><strong>x-if must use &lt;template&gt; and have <span style="text-decoration: underline">one</span> root element.</strong></li>
 				</ul>
 				</section>
 
@@ -250,10 +252,10 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 				<section>
 				<pre><code class="html" data-trim data-line-numbers="">
 <div x-data="{
-    catImage: 'https://placekitten.com/500/500'
+	myImage: 'https://picsum.photos/300/300'
 }">
 
-	<img :src="catImage">
+	<img :src="myImage">
 </div>
 				</code></pre>
 				</section>
@@ -273,7 +275,7 @@ data-slug-hash="wvmdzBg" data-editable="true" data-user="cfjedimaster" style="he
 				<ul>
 				<li class="fragment">x-for</li>
 				<li class="fragment">Can get an index too</li>
-				<li class="fragment"><strong>Must use &lt;template&gt; with ONE root element</strong></li>
+				<li class="fragment"><strong>Must use &lt;template&gt; with <span style="text-decoration: underline">one</span> root element</strong></li>
 				<li class="fragment">:key if you will be re-ordering (attribute binding)</li>
 				</ul>
 				</section>
@@ -377,7 +379,7 @@ data-editable="true" data-user="cfjedimaster" style="height: 500px; box-sizing: 
 				<section>
 				<h2>Getters</h2>
 				<ul>
-				<li class="fragment">Use a function that makes use of this scoped variables</li>
+				<li class="fragment">Use a function that makes use of <code>this</code> scoped variables</li>
 				<li class="fragment">Alpine will recognize when changed</li>
 				<li class="fragment">JavaScript <code>get</code> modifier is not required.</li>
 				</ul>
